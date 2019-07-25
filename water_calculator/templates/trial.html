@@ -1,0 +1,84 @@
+{% extends 'base/main_base.html' %}
+
+{% block head %}
+    <title>Trial</title>
+    <style type="text/css">
+    .col-md-4{
+        background-image: url("/static/main/mrjn-photography-1079575-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .col-md-7{
+        background-image: url("/static/main/map_home.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+@media only screen and (min-width: 1000px) {
+    .col-md-4 {
+        margin-left: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .col-md-7 {
+        margin-right: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+    @media only screen and (max-width: 786px) {
+        /* For mobile phones: */
+        .col-md-4 {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .col-md-7 {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+  <div class="row">
+      <div class="col-md-4" style="background-color:pink;">
+SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          SidLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+      </div>
+    <div class="col-md-7" style="background-color:yellow;">
+      <div class="slider-notes">
+          <p>
+	<img src="/static/main/slider.gif" height="500px" width="700px" >
+</p>
+
+      </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

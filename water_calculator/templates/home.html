@@ -1,0 +1,41 @@
+{% extends 'base/main_base.html' %}
+{% load static %}
+
+{% block head %}
+    <style type="text/css">
+    body {
+        background: url({% static 'main/home_2.gif' %}) no-repeat center center fixed;
+        background-size: contain;
+        overflow: visible;
+    }
+    h1{
+    margin-top: 2em;
+        margin-left: 15em;
+         font-family: 'Advent Pro', sans-serif;
+  font-size: 3em;
+        display: contents;
+  color: rgba(0,0,0, 0.7);
+
+
+
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+    <form method="POST">
+    {% csrf_token %}
+    <!--PINCODE START-->
+    {{ form.as_p }}
+        <a href="question/1">
+<input type="submit" class="btn btn-outline-primary"  >Answer the Questionnaire</input>
+</a>
+    </form>
+    <!--PINCODE END-->
+
+
+
+
+{% endblock %}

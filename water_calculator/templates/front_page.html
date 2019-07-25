@@ -1,0 +1,236 @@
+{% extends 'base/main_base.html' %}
+{% load static %}
+
+{% block head %}
+    <style type="text/css">
+body,html{margin:0;padding:0;height:100%;}
+#main_body{
+  background:url('{% static 'main/aaron-lee-WrPmNpKQUUY-unsplash.jpg' %}');
+    background-size: cover;
+    background-repeat: no-repeat;
+  font-family: 'Cabin Condensed', sans-serif;
+
+    height: 100vh;
+    width: 100vw;
+
+}
+
+svg{font-weight:bold;max-width:1080px;height:auto;}
+
+  #footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(6, 25, 34, 0.93);
+  color: white;
+  text-align: center;
+}
+
+{#    #intro {#}
+{#  animation: description .35s linear 12s forwards;#}
+{#  margin-top: 1em;#}
+{#  opacity: 1;#}
+{#	font: 2.25rem/1.5rem 'Vidaloka', serif;#}
+{#	text-align: right;#}
+{#	margin-right: 0.5rem;#}
+{#	color: #3BDDC4;#}
+{#	position: relative;#}
+{##}
+{#}#}
+
+.text-holder-2 {
+  position: absolute;
+  top: 55%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 200px;
+
+    font-weight: bolder;
+}
+.text-holder-2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: appear2 7s cubic-bezier(0.19, 1, 0.22, 1) forwards infinite;
+  animation-delay: 1.2s;
+    font-weight: bolder;
+}
+.text-holder-2 h3 {
+
+  font-size: 2em;
+  font-family: "sans-serif";
+  position: relative;
+  opacity: 0;
+  animation: text-appear 1.8s linear forwards;
+  animation-delay: .7s;
+    font-weight: bolder;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-fill-color: #005baa;
+}
+
+@keyframes text-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    left: 0%;
+    width: 0%;
+  }
+  50% {
+    left: 0%;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+  }
+}
+@keyframes appear2 {
+  0% {
+    left: 0%;
+    width: 0%;
+    background: #f8d066;
+  }
+  50% {
+    left: 0%;
+    width: 100%;
+    background: #F8D066;
+  }
+  100% {
+    left: 100%;
+    width: 0%;
+    background: #F8D066;
+  }
+}
+
+
+
+
+
+
+    </style>
+{% endblock %}
+
+
+
+
+{% block content %}
+    <div id="main_body">
+
+<p align="center">
+    <svg viewbox="0 0 120 18" >
+  <defs>
+    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="5%" stop-color="#326384"/>
+      <stop offset="95%" stop-color="#123752"/>
+    </linearGradient>
+    <pattern id="wave" x="0" y="2" width="1000" height="20" patternUnits="userSpaceOnUse">
+      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
+        <animateTransform
+            attributeName="transform"
+            begin="0s"
+            dur="2.5s"
+            type="translate"
+            from="0,0"
+            to="40,0"
+            repeatCount="indefinite" />
+      </path>
+    </pattern>
+  </defs>
+  <text text-anchor="middle" x="60" y="15" font-size="10" fill="url(#wave)"  fill-opacity="0.6">Water Footprint</text>
+  <text text-anchor="middle" x="60" y="15" font-size="10" fill="url(#gradient)" fill-opacity="0.1">Water Footprint</text>
+    <text text-anchor="middle" x="60" y="15" font-size="10" fill="url(#wave)"  fill-opacity="0.6">Water Footprint</text>
+  <text text-anchor="middle" x="60" y="15" font-size="10" fill="url(#gradient)" fill-opacity="0.1">Water Footprint</text>
+
+</svg>
+
+{#100 30 220 20#}
+<svg viewBox="140 30 140 25">
+  <defs>
+    <linearGradient id="gradient2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="5%" stop-color="#326384"></stop>
+      <stop offset="95%" stop-color="#123752"></stop>
+    </linearGradient>
+       <pattern id="wave2" x="150" y="100" width="1000" height="15" patternUnits="userSpaceOnUse">
+      <path id="wavePath2" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient2)">
+        <animateTransform
+            attributeName="transform"
+            begin="0s"
+            dur="2.5s"
+            type="translate"
+            from="0,0"
+            to="40,0"
+            repeatCount="indefinite" />
+      </path>
+    </pattern>
+
+  </defs>
+  <text text-anchor="middle" x="210" y="40" font-size="15" fill="url(#wave2)" fill-opacity="0.6">Calculator</text>
+  <text text-anchor="middle" x="210" y="40" font-size="15" fill="url(#gradient2)" fill-opacity="0.1">Calculator</text>
+    <text text-anchor="middle" x="210" y="40" font-size="15" fill="url(#wave2)" fill-opacity="0.6">Calculator</text>
+  <text text-anchor="middle" x="210" y="40" font-size="15" fill="url(#gradient2)" fill-opacity="0.1">Calculator</text>
+
+</svg>
+</p>
+
+
+        <div class="text-holder-2" id="again">
+            <h3>Your water footprint is the quantity of fresh water that you consume directly,
+      while indulging in the domestic activities and indirectly, by consuming various products and services.</h3>
+</div>
+
+<br/>
+         <br/>
+        <br/>
+        <br/>
+         <br/>
+        <br/>
+        <br/>
+         <br/>
+        <br/>
+
+
+    <h3 align="center" style="font-size: 25px;
+  background: -webkit-linear-gradient(#000000, #2600ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"> To calculate your direct water footprint, enter your pincode:</h3>
+      <form method="POST" align="center">
+    {% csrf_token %}
+    <!--PINCODE START-->
+    {{ form.pincode }}
+          <br/>
+          <br/>
+<input type="submit" class="btn btn-lg btn-primary" value="Start"/>
+
+
+    </form>
+</div>
+    <!--PINCODE END-->
+
+<div id="footer">
+
+<div id="logo">
+    <a href="https://adriindia.org/centre/ceecc">
+    <img src="{% static 'main/ADRI.jpg' %}" height="80px" width="80px" style="margin-top: 1rem">
+    <img src="{% static 'main/CEECC_logo.png' %}" height="80px" width="80px" style="margin-top: 1rem">
+        </a>
+</div>
+
+
+ <div class="container text-center">
+      <small>Copyright &copy; <a href="https://adriindia.org/centre/ceecc"> Center for Environment, Energy and Climate Change, Asian Development Research Institute</small></a>
+    </div>
+  </div>
+
+{% endblock %}

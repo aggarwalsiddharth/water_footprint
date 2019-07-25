@@ -1,0 +1,612 @@
+{% extends 'base/main_base.html' %}
+{% load static %}
+
+{% block head %}
+
+    <link rel="stylesheet" href= "/static/Morphext/dist/morphext.css">
+    <style type="text/css">
+    .box {
+  height: 280px;
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #020438;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.box .percent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 50px;
+}
+.box .pre-text {
+  position: absolute;
+  left: 0px;
+  top: 55px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+}
+.box .water {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  background: #4D6DE3;
+  transition: all .3s;
+}
+.box .water_wave {
+  width: 200%;
+  position: absolute;
+  bottom: 100%;
+}
+.box .water_wave_back {
+  right: 0;
+  fill: #C7EEFF;
+  -webkit-animation: wave-back 1.4s infinite linear;
+          animation: wave-back 1.4s infinite linear;
+}
+.box .water_wave_front {
+  left: 0;
+  fill: #4D6DE3;
+  margin-bottom: -1px;
+  -webkit-animation: wave-front .7s infinite linear;
+          animation: wave-front .7s infinite linear;
+}
+
+@-webkit-keyframes wave-front {
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@keyframes wave-front {
+  100% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+@-webkit-keyframes wave-back {
+  100% {
+    -webkit-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+  }
+}
+@keyframes wave-back {
+  100% {
+    -webkit-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+  }
+}
+
+
+
+.text {
+  position: absolute;
+  width: 450px;
+  left: 50%;
+  margin-left: -225px;
+  height: 40px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.word {
+  position: absolute;
+  width: 220px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+
+
+.center-outer {
+display: table;
+width: 100%;
+height: 100%;
+}
+
+.center-inner {
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+}
+
+/* Essential CSS - Makes the effect work */
+
+
+
+.bubbles {
+display: inline-block;
+font-family: arial;
+position: relative;
+}
+
+.bubbles h1 {
+position: relative;
+margin: 1em 1em 1em;
+font-family:  "Advent Pro";
+    font-size: 2.5rem;
+color: #fff;
+z-index: 2;
+}
+
+.individual-bubble {
+position: absolute;
+border-radius: 100%;
+bottom: 10px;
+background-color: #fff;
+z-index: 1;
+}
+
+
+
+
+{#.col-sm-6 {#}
+{#  color: white;#}
+{#  font-family: Helvetica, sans-serif;#}
+{#  font-size: 3vw;#}
+{#  font-weight: 100;#}
+{#  text-decoration: none;#}
+{#  text-transform: uppercase;#}
+{#   text-fill-color: transparent;#}
+{#  background-image: linear-gradient(to right, #303395 0%, #27F0F0 100%);#}
+{#  background-size: 150% 100%;#}
+{#}#}
+
+
+    .fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 80%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-pinterest {
+  background: #cb2027;
+  color: white;
+}
+
+
+    h1 {
+  font-family: 'Rig Bold Face', sans-serif;
+  text-transform: uppercase;
+  font-size: 9vw;
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+
+  position: relative;
+  color: #91d4ff;
+}
+h1:before, h1:after,
+h1 span:before,
+h1 span:after {
+  content: attr(data-heading);
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  font-weight: normal;
+  text-shadow: none;
+}
+h1:before {
+  color: #fff;
+  font-family: 'Rig Bold Inline', sans-serif;
+}
+h1:after {
+  font-family: 'Rig Bold Coarse', sans-serif;
+  color: #040351;
+}
+
+span::before {
+  font-family: 'Rig Bold Shadow', sans-serif;
+  color: #cbc7e3;
+  z-index: -1;
+}
+span::after {
+  font-family: 'Rig Bold Extrude', sans-serif;
+  color: #4d8bea;
+  z-index: -1;
+}
+
+@font-face {
+  font-family: 'Rig Bold Coarse';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldCoarse.otf");
+}
+@font-face {
+  font-family: 'Rig Bold Extrude';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldExtrude.otf");
+}
+@font-face {
+  font-family: 'Rig Bold Shadow';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldShadow.otf");
+}
+@font-face {
+  font-family: 'Rig Bold Face';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldFace.otf");
+}
+@font-face {
+  font-family: 'Rig Bold Inline';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Rig-BoldInline.otf");
+}
+
+
+    </style>
+
+{% endblock %}
+<script>
+    {% block jquery %}
+
+
+var endpoint = '/api/data'
+        var defaultData=[]
+        var labels=[];
+        var curr_total;
+        var average_total;
+        var uganda
+
+
+        $.ajax({
+            method:'GET',
+            url:endpoint,
+            success:function (data) {
+                labels=data.labels
+                defaultData=data.default
+
+                curr_total = data.current_user_total
+                average_total=data.average_total
+                setchart1()
+                show_usage(curr_total)
+
+
+            },
+            error:function (error_data) {
+                console.log(error_data)
+
+            }
+        })
+
+        function setchart1() {
+            Chart.defaults.global.defaultFontColor = 'white';
+                            var ctx = document.getElementById('myChart1').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'bar',
+
+                    // The data for our dataset
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Category wise consumption in litres',
+                            data: defaultData,
+                            backgroundColor: 'rgb(191,238,255)',
+                            borderColor: 'rgb(191,238,255)'
+                        }]
+                    },
+                    options: {
+                        scales: {
+        xAxes: [{
+
+            gridLines: {
+                display:false
+            }
+        }],
+                            yAxes: [{
+            display:false,
+
+            gridLines: {
+                display:false
+            }
+        }]
+
+    },
+                        legend: {
+            labels: {
+                // This more specific font property overrides the global property
+                fontColor: 'white'
+            }
+        }
+                    }
+                })
+        }
+
+
+
+
+
+
+        var cnt=document.getElementById("count");
+var water=document.getElementById("water");
+var percent=0;
+var interval;
+interval=setInterval(function(){
+  percent++;
+
+  water.style.transform='translate(0'+','+(100-percent)+'%)';
+  if(percent==Number((curr_total/500)*100)){
+    clearInterval(interval);
+  }
+},60);
+
+function show_usage(curr_total){
+       var cnt=document.getElementById("count");
+         cnt.innerHTML = curr_total;
+}
+
+
+
+
+$("#js-rotating").Morphext({
+    // The [in] animation type. Refer to Animate.css for a list of available animations.
+    animation: "bounceIn",
+    // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+    separator: ",",
+    // The delay between the changing of each phrase in milliseconds.
+    speed: 3000,
+    complete: function () {
+        // Called after the entrance animation is executed.
+    }
+
+});
+
+$("#js-rotating2").Morphext({
+    // The [in] animation type. Refer to Animate.css for a list of available animations.
+    animation: "bounceIn",
+    // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
+    separator: ",",
+    // The delay between the changing of each phrase in milliseconds.
+    speed: 3000,
+    complete: function () {
+        // Called after the entrance animation is executed.
+    }
+});
+
+
+jQuery(document).ready(function($){
+
+    // Define a blank array for the effect positions. This will be populated based on width of the title.
+    var bArray = [];
+    // Define a size array, this will be used to vary bubble sizes
+    var sArray = [4,6,8,10];
+
+    // Push the header width values to bArray
+    for (var i = 0; i < $('.bubbles').width(); i++) {
+        bArray.push(i);
+    }
+
+    // Function to select random array element
+    // Used within the setInterval a few times
+    function randomValue(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // setInterval function used to create new bubble every 350 milliseconds
+    setInterval(function(){
+
+        // Get a random size, defined as variable so it can be used for both width and height
+        var size = randomValue(sArray);
+        // New bubble appeneded to div with it's size and left position being set inline
+        // Left value is set through getting a random value from bArray
+        $('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+
+        // Animate each bubble to the top (bottom 100%) and reduce opacity as it moves
+        // Callback function used to remove finsihed animations from the page
+        $('.individual-bubble').animate({
+            'bottom': '100%',
+            'opacity' : '-=0.7'
+        }, 3000, function(){
+            $(this).remove()
+        }
+        );
+
+
+    }, 350);
+
+});
+
+
+    {% endblock %}
+</script>
+
+
+
+
+{% block content %}
+    <div class="row" >
+    <div class="col-sm-12">
+        <center>
+    <h1 data-heading="Result" style="position:relative">
+		<span contenteditable data-heading="Result" >Result</span>
+	</h1>
+            </center>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row" style="margin-top: 1em; background: #727ea4; height: 40vh; width: 100%; position: relative">
+    <div class="col-sm-6">
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+  <symbol id="wave">
+    <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+    <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+    <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+    <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+  </symbol>
+</svg>
+<div class="box">
+
+  <div class="percent">
+    <div class="pre-text">Your daily consumption is:</div>
+    <div class="percentNum" id="count"> 0 </div>
+    <div class="percentB">&nbsp;Litres</div>
+  </div>
+  <div id="water" class="water">
+    <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+      <use xlink:href="#wave"></use>
+    </svg>
+    <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+      <use xlink:href="#wave"></use>
+    </svg>
+  </div>
+</div>
+
+    </div>
+    <div class="col-sm-6">
+<canvas id="myChart1" height="40%" width="90%" style="align-self: center ;">
+
+</canvas>
+         </div>
+
+    </div>
+    <div class="row" style="margin-top: 1em;  background: #005baa">
+    <div class="col-sm-4" id="doyouknow">
+<img src="{% static 'main/did_you_know.png' %}" height="100%" width="100%">
+    </div>
+    <div class="col-sm-8" id="GradientText" style="background: #005baa">
+        <div class="center-outer">
+<div class="center-inner">
+
+<div class="bubbles">
+
+<h1>An average person in <span id="js-rotating">Uganda, Bangladesh, China , Australia , America </span></h1>
+<h1> uses this much water in <span id="js-rotating2"> {{ uganda }} days, {{ bangladesh }} days, {{ china}} days, {{ australia }} hours, {{ america }} hours </span>
+</h1>
+</div>
+
+</div>
+</div>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 1em;">
+
+        <div class="col-sm-5" style="margin-left:2rem;background: #005263">
+          <p style="color: #FFFFFF; font-size: xx-large; font-weight: bolder; text-align: center; margin-left: 2rem;">  This is how the domestic water draft &  future demand are related for {{ user_state }}:</p>
+{#        <video muted autoplay playsinline width="100%" height="100%" style="margin: 0" >#}
+
+            <video muted playsinline autoplay="autoplay" style="width:95%; margin-left: 1rem;margin-top: 1rem;margin-bottom: 1rem"  >
+<source src="{{ result_video }}" type="video/mp4">
+
+</video>
+            {#        </video>#}
+
+
+    </div>
+
+        <div class="col-sm-6" style=" margin-left:2rem; background: #0693c6">
+          <p style="color: #FFFFFF; font-size: xx-large; font-weight: bolder; text-align: center; margin-left: 1rem;">  Share your Water Footprint:</p>
+
+           <img src="{{ result_image }}" height="75%" width="100%">
+            <br/>
+           <p style="position: relative"> <a href="#" class="fa fa-facebook"></a></p>
+<p style="position: relative"><a href="#" class="fa fa-twitter"></a></p>
+
+          <p style="position: relative">  <a href="#" class="fa fa-instagram"></a></p>
+<p><a href="#" class="fa fa-pinterest"></a></p>
+
+
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+{% endblock %}
